@@ -1,30 +1,31 @@
 Litecoin integration/staging tree
 ================================
 
-http://www.litecoin.org
+http://www.DragonCoin.net
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
+Copyright (c) 2013-204 Dragoncoin Developers
 
-What is Litecoin?
+What is Dragoncoin?
 ----------------
 
-Litecoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
- - 2.5 minute block targets
- - subsidy halves in 840k blocks (~4 years)
- - ~84 million total coins
+Dragoncoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+ - Approximately 4-minute block targets
+ - subsidy halves in 505050 blocks (~4 years)
+ - 88,888,888 million total coins
 
-The rest is the same as Bitcoin.
- - 50 coins per block
- - 2016 blocks to retarget difficulty
+Initialization period (first 4 years).
+ - 88 coins per block
+ - 8 hours to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Litecoin client sofware, see http://www.litecoin.org.
+the Litecoin client sofware, see http://www.dragoncoin.net.
 
 License
 -------
 
-Litecoin is released under the terms of the MIT license. See `COPYING` for more
+Dragoncoin is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.
 
 Development process
@@ -70,5 +71,5 @@ Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
     qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
     make -f Makefile.test
-    ./litecoin-qt_test
+    ./dragoncoin-qt_test
 

@@ -1066,13 +1066,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 88 * COIN; // 88 coins per block
 
     // Subsidy is cut in half every ? blocks
-    nSubsidy >>= (nHeight / 525960); // halving every 2 years
+    nSubsidy >>= (nHeight / 505050); // halving approximately every 2 years
 
     return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 8 * 60 * 60; // Difficulty reajusts every 8 hours
-static const int64 nTargetSpacing = 2 * 60; // Dragoncoin payout is 2 minutes
+static const int64 nTargetSpacing = 249.9361945; // Dragoncoin payout is 2 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -2768,13 +2768,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1389395833;
+        block.nTime    = 1389902461;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2084524493;
 
         if (fTestNet)
         {
-            block.nTime    = 1389395833;
+            block.nTime    = 1389902461; //epochtime
             block.nNonce   = 385270584;
         }
 
@@ -4544,7 +4544,7 @@ void static DragoncoinMiner(CWallet *pwallet)
 {
     printf("DragoncoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("litecoin-miner");
+    RenameThread("dragoncoin-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
