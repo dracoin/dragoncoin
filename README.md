@@ -1,4 +1,4 @@
-Litecoin integration/staging tree
+Dragoncoin integration/staging tree
 ================================
 
 http://www.DragonCoin.net
@@ -20,7 +20,7 @@ Initialization period (first 4 years).
  - 8 hours to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Litecoin client sofware, see http://www.dragoncoin.net.
+the Dragoncoin client sofware, see http://www.dragoncoin.net.
 
 License
 -------
