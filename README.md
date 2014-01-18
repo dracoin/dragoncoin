@@ -5,7 +5,7 @@ http://www.DragonCoin.net
 
 Copyright (c) 2009-2013 Bitcoin Developers<br>
 Copyright (c) 2011-2013 Litecoin Developers<br>
-Copyright (c) 2013-204 Dragoncoin Developers
+Copyright (c) 2013-2014 Dragoncoin Developers
 
 What is Dragoncoin?
 ----------------
