@@ -1,11 +1,11 @@
-Litecoin integration/staging tree
+Dragoncoinli integration/staging tree
 ================================
 
 http://www.DragonCoin.net
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2011-2013 Litecoin Developers
-Copyright (c) 2013-204 Dragoncoin Developers
+Copyright (c) 2011-2013 Dragoncoin Developers
+Copyright (c) 2013-2014 Dragoncoin Developers
 
 What is Dragoncoin?
 ----------------
@@ -20,7 +20,7 @@ Initialization period (first 4 years).
  - 8 hours to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Litecoin client sofware, see http://www.dragoncoin.net.
+the Dragoncoin client sofware, see http://www.dragoncoin.net.
 
 License
 -------
@@ -34,7 +34,7 @@ Development process
 Developers work in their own trees, then submit pull requests when they think
 their feature or bug fix is ready.
 
-If it is a simple/trivial/non-controversial change, then one of the Litecoin
+If it is a simple/trivial/non-controversial change, then one of the Dragoncoin
 development team members simply pulls it.
 
 If it is a *more complicated or potentially controversial* change, then the patch
@@ -48,7 +48,7 @@ controversial.
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly to indicate new official, stable release versions of Litecoin.
+regularly to indicate new official, stable release versions of Dragoncoin.
 
 Testing
 -------
