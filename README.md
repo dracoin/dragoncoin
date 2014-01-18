@@ -1,21 +1,21 @@
-Dragoncoinli integration/staging tree
+Dragoncoin integration/staging tree
 ================================
 
 http://www.DragonCoin.net
 
-Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2011-2013 Dragoncoin Developers
+Copyright (c) 2009-2013 Bitcoin Developers<br>
+Copyright (c) 2011-2013 Litecoin Developers<br>
 Copyright (c) 2013-2014 Dragoncoin Developers
 
 What is Dragoncoin?
 ----------------
 
-Dragoncoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+Dragoncoin is a derivative of Litecoin with these specifications:
  - Approximately 4-minute block targets
  - subsidy halves in 505050 blocks (~4 years)
- - 88,888,888 million total coins
+ - 88,888,888 total coins - Eighty Eight Million Eight Hundred Eighty Eight Thousand Eight Hundred Eighty Eight!
 
-Initialization period (first 4 years).
+Initialization period (first 4 years):
  - 88 coins per block
  - 8 hours to retarget difficulty
 
@@ -31,15 +31,8 @@ information or see http://opensource.org/licenses/MIT.
 Development process
 -------------------
 
-Developers work in their own trees, then submit pull requests when they think
+Developers would work in their own trees, then submit pull requests when they think
 their feature or bug fix is ready.
-
-If it is a simple/trivial/non-controversial change, then one of the Dragoncoin
-development team members simply pulls it.
-
-If it is a *more complicated or potentially controversial* change, then the patch
-submitter will be asked to start a discussion (if they haven't already) on the
-[mailing list](http://sourceforge.net/mailarchive/forum.php?forum_name=bitcoin-development).
 
 The patch will be accepted if there is broad consensus that it is a good thing.
 Developers should expect to rework and resubmit patches if the code doesn't
@@ -49,14 +42,6 @@ controversial.
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
 regularly to indicate new official, stable release versions of Dragoncoin.
-
-Testing
--------
-
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test. Please be patient and help out, and
-remember this is a security-critical project where any mistake might cost people
-lots of money.
 
 ### Automated Testing
 
@@ -69,7 +54,7 @@ Unit tests for the core code are in `src/test/`. To compile and run them:
 
 Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
-    qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+    qmake DRAGONCOIN_QT_TEST=1 -o Makefile.test dragoncoin-qt.pro
     make -f Makefile.test
     ./dragoncoin-qt_test
 
