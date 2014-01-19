@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x7bb00e58224014dab373a432c51f81d6b95ffb0fa14b94f7da2714fe329ebad4");
+uint256 hashGenesisBlock("0xbdfdbc75f4ee8c7d6e15a60e0b1b65ddb256e761d053b2c530e8154917da57e7");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Dragoncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2330,13 +2330,6 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
     return true;
 }
 
-
-
-
-
-
-
-
 CMerkleBlock::CMerkleBlock(const CBlock& block, CBloomFilter& filter)
 {
     header = block.GetBlockHeader();
@@ -2362,13 +2355,6 @@ CMerkleBlock::CMerkleBlock(const CBlock& block, CBloomFilter& filter)
 
     txn = CPartialMerkleTree(vHashes, vMatch);
 }
-
-
-
-
-
-
-
 
 uint256 CPartialMerkleTree::CalcHash(int height, unsigned int pos, const std::vector<uint256> &vTxid) {
     if (height == 0) {
@@ -2483,12 +2469,6 @@ uint256 CPartialMerkleTree::ExtractMatches(std::vector<uint256> &vMatch) {
         return 0;
     return hashMerkleRoot;
 }
-
-
-
-
-
-
 
 bool AbortNode(const std::string &strMessage) {
     strMiscWarning = strMessage;
@@ -2757,7 +2737,7 @@ bool InitBlockIndex() {
       //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "01/10/2014 3:20 PM PST, although idea was conceived 1 year prior";
+        const char* pszTimestamp = "Dragon Coin is Conceptualized on April 2012, yet born on January, 18, 2014";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2769,9 +2749,9 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1389902461;
+        block.nTime    = 1390085797;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 385927402;
+        block.nNonce   = 386064109;
 
         if (fTestNet)
         {
@@ -2784,10 +2764,15 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x7d447741904b609bbd2d572bc7d13c3ea47b075c1b8e3fba1485da6506548b08"));
+        assert(block.hashMerkleRoot == uint256("0x64c12b7ada5d3e43e3a26962d7c66a79e58fd396bb7309f551eaef25d86d75e1"));
+
+//insert hash genesis block        
+        
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
 
+       
+        
         block.print();
         assert(hash == hashGenesisBlock);     
         
@@ -2809,8 +2794,6 @@ bool InitBlockIndex() {
 
     return true;
 }
-
-
 
 void PrintBlockTree()
 {
@@ -3208,10 +3191,6 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         printf("dropmessagestest DROPPING RECV MESSAGE\n");
         return true;
     }
-
-
-
-
 
     if (strCommand == "version")
     {
