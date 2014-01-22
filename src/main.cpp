@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xbdfdbc75f4ee8c7d6e15a60e0b1b65ddb256e761d053b2c530e8154917da57e7");
+uint256 hashGenesisBlock("0x34286562d45d889350977e5fda4e0f3a76326958f5c6fd27bfedc5c943777b70");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Dragoncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2737,7 +2737,7 @@ bool InitBlockIndex() {
       //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "Dragon Coin is Conceptualized on April 2012, yet born on January, 18, 2014";
+        const char* pszTimestamp = "Dragon Coin Time";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2749,13 +2749,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1390085797;
+        block.nTime    = 1390332503;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 386064109;
+        block.nNonce   = 390890121;
 
         if (fTestNet)
         {
-            block.nTime    = 1389902461; //epochtime
+            block.nTime    = 1389902461; //date +%s
             block.nNonce   = 385927402;
         }
 
@@ -2764,9 +2764,9 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x64c12b7ada5d3e43e3a26962d7c66a79e58fd396bb7309f551eaef25d86d75e1"));
+        assert(block.hashMerkleRoot == uint256("0xaa7f857e35dda1888716990c7d7ee44e3e5f179355c656a4ceff994871857eac"));
 
-//insert hash genesis block        
+//Genesis generation code insert       
         
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
