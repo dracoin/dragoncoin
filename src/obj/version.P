@@ -1,4 +1,4 @@
 obj/version.o: version.cpp version.h clientversion.h \
- /home/dragon/dragoncoin/src/obj/build.h
+ /home/linux/dragoncoin/src/obj/build.h
 version.cpp version.h clientversion.h :
- /home/dragon/dragoncoin/src/obj/build.h :
+ /home/linux/dragoncoin/src/obj/build.h :

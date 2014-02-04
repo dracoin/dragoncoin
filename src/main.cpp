@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x3879016872fe2fb21634e0220190ad5934396d3822857a5488263982e310fb7bd24d4ebaf");
+uint256 hashGenesisBlock("0x4f12a088393e4ced88f08f47a4444af3c6935bd1bfaa47d5adab47f5f919b593");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Dragoncoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -156,11 +156,6 @@ void static ResendWalletTransactions()
     BOOST_FOREACH(CWallet* pwallet, setpwalletRegistered)
         pwallet->ResendWalletTransactions();
 }
-
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -342,12 +337,6 @@ unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans)
     }
     return nEvicted;
 }
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -1064,16 +1053,16 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 88 * COIN; // 88 coins per block
+    int64 nSubsidy = 8888 * COIN; // 88 coins per block
 
     // Subsidy is cut in half every ? blocks
-    nSubsidy >>= (nHeight / 505050); // halving approximately every 2 years
+    nSubsidy >>= (nHeight / 500050); // halving approximately every 2 years
 
     return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 8 * 60 * 60; // Difficulty reajusts every 8 hours
-static const int64 nTargetSpacing = 249.9361945; // Dragoncoin payout is 2 minutes
+static const int64 nTargetSpacing = 252.4355539; // Dragoncoin block is spaced at about 4 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -2704,7 +2693,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x6f664d17a7afba3137d5ec9074c82eb59ac3dea01280437f7361ce26121b8f14");
+        hashGenesisBlock = uint256("0x");
     }
 
     //
@@ -2749,14 +2738,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1390869151;
+        block.nTime    = 1391548035;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 387901687;
 
         if (fTestNet)
         {
-            block.nTime    = 1389902461; //date +%s
-            block.nNonce   = 387554243;
+            block.nTime    = 1391548035; //date +%s
+            block.nNonce   = 387627538;
         }
 
         //// debug print
@@ -2767,7 +2756,7 @@ bool InitBlockIndex() {
         assert(block.hashMerkleRoot == uint256("0xaa7f857e35dda1888716990c7d7ee44e3e5f179355c656a4ceff994871857eac"));
 
 // If genesis block hash does not match, then generate new genesis hash. Script begins
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
