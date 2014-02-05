@@ -11,12 +11,16 @@ What is Dragoncoin?
 ----------------
 
 Dragoncoin is a derivative of Litecoin with these specifications:
- - Approximately 4-minute block targets
- - subsidy halves in 505050 blocks (~4 years)
- - 88,888,888 total coins - Eighty Eight Million Eight Hundred Eighty Eight Thousand Eight Hundred Eighty Eight!
+ - Network seeding is hosted at DragonCoin.info and is built into the program
+ - 8,888 coins released per block
+ - Approximately 4-minute block reward spacing
+ - Subsidy halves in 500050 blocks (approximately 4 years)
+ - Dispensing Schedule: First year = 4,444,444,444 | Second year = 2,222,222,222 | Third year = 1,111,111,111 | Fourth year = 555,555,555.5
+ - Last coin to be mined will be in the year of 2066. Thereafter, transaction fees shall provide incentives for mining
+ - Total coins: 8,888,888,888 - Eight Billion Eight Hundred Eighty Eight Million Eight Hundred Eighty Eight Thousand Eight Hundred Eighty Eight!
 
 Initialization period (first 4 years):
- - 88 coins per block
+ - 8888 coins per block
  - 8 hours to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
